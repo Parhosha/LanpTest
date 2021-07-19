@@ -1,0 +1,73 @@
+  #animation {
+      height: 100px;
+      width: 100px;
+      animation: loader1 4s linear infinite;
+      display: block;
+
+       img{
+        animation: loader2 4s linear infinite;
+
+       }
+  }
+
+  @keyframes loader1 {
+      0% {
+          transform: rotate(0deg);
+      }
+
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+  @keyframes loader2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+  #animation span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 100px;
+      width: 100px;
+      clip: rect(0, 100px, 100px, 50px);
+      z-index: 2;
+  }
+
+  #animation span::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 100px;
+      width: 100px;
+      clip: rect(0, 100px, 100px, 50px);
+      border: 5px solid #3886e0;
+      border-radius: 50%;
+      animation: loader3 4s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite;
+  }
+
+  @keyframes loader3 {
+      0% {
+          transform: rotate(-140deg);
+      }
+
+      50% {
+          transform: rotate(-160deg);
+      }
+
+      100% {
+          transform: rotate(140deg);
+      }
+  }
